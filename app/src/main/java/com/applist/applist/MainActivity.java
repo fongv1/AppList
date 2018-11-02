@@ -22,10 +22,18 @@ public class MainActivity extends AppCompatActivity {
 
     // View.OnClickListener is an interface
     // create a OnClickListener object by using anonymous class expression
+    boolean showingFirst = true;
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            if(showingFirst == true){
             imageView.setImageResource(R.drawable.round_view_module_black_18);
+                showingFirst = false;
+            }else{
+                imageView.setImageResource(R.drawable.round_view_list_black_18);
+                imageView.setTag(70);
+                showingFirst = true;
+            }
         }
     };
 
