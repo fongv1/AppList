@@ -11,10 +11,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // instance to database
+        ConnectionSQL connection = new ConnectionSQL(this, "dbItems", null, 1);
+
     }
 
     public void addList(View view){
-        Intent addList = new Intent(this, SecondActivity.class);
+        Intent addList = new Intent(this, RegisterItem.class);
         startActivity(addList);
     }
 
